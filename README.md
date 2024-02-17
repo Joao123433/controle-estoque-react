@@ -1,8 +1,8 @@
 # Aplicação React de Controle de Estoque
 Aplicação React para controle de estoque. A aplicação utiliza React Router para navegação, React Context API para gerenciamento de estado, Tailwind para as estilizações e React Toastify para exibir notificações
 
-## Link para o projeto
-https://joao123433.github.io/controle-estoque-react
+<!-- ## Link para o projeto
+https://joao123433.github.io/controle-estoque-react -->
 
 ## Funcionalidades Principais
 - `Dashboard:` Exibe estatísticas do estoque, incluindo diversidade de itens, inventário total, itens recentes e itens em baixa quantidade.
