@@ -9,7 +9,7 @@ https://joao123433.github.io/controle-estoque-react
 - `Itens:` Permite visualizar, adicionar, atualizar e excluir itens do estoque.
 
 ## Estrutura do Projeto
-1. `App.tsx`
+1. App.tsx
 - O `App.tsx` é o ponto de entrada principal da sua aplicação. Ele é responsável por envolver os componentes com os provedores de contexto necessários e configurar a navegação usando o React Router.
 
 2. `ItemsContext.tsx`
