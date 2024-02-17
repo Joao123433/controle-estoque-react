@@ -12,7 +12,7 @@ https://joao123433.github.io/controle-estoque-react
 1. App.tsx
 - O `App.tsx` é o ponto de entrada principal da sua aplicação. Ele é responsável por envolver os componentes com os provedores de contexto necessários e configurar a navegação usando o React Router.
 
-2. `ItemsContext.tsx`
+2. ItemsContext.tsx
 - O `ItemsContext.tsx` define e exporta o contexto `IContext` utilizando a Context API do React. Este contexto é utilizado para fornecer informações relacionadas aos itens do estoque para os componentes da aplicação. Ele também inclui funções para adicionar, obter, atualizar e excluir itens do estoque.
 
 3. router.tsx
