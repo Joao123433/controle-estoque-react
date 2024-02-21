@@ -1,10 +1,10 @@
 import { useState, SetStateAction, ChangeEvent } from "react"
 import ItemInterface from "../interface/ItemInterface"
 import useStock from "./useStock"
-import { useParams } from "react-router-dom"
+import { toast } from "react-toastify"
 
-export default function UseNewItems() {
-  const { itemId } = useParams()
+export default function UseUpdateItems(itemId: string | undefined) {
+  const notify = () => toast("Item Atualizado", { theme: "dark" })
   const stock = useStock()
   const itemFind = stock.items.find(item => item.id === Number(itemId)) as ItemInterface
 
@@ -20,7 +20,6 @@ export default function UseNewItems() {
 
   const settingQuantity = (e: ChangeEvent<HTMLInputElement>) => {
     setQuantity(e.target.value)
-    console.log({stock, itemFind})
   }
 
   const settingPrice = (e: ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +53,8 @@ export default function UseNewItems() {
     setPrice("")
     setCategory("")
     setDescription("")
+
+    notify()
   }
 
 

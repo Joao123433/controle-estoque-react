@@ -44,7 +44,7 @@ export default function Home() {
                 <tr className="w-full flex justify-between" key={item.id}>
                   <td className="w-2/4 text-left">{item.nome}</td>
                   <td className="w-2/4 text-center">
-                    <Link to={`/items/${item.id}`}>
+                    <Link to={`/controle-estoque-react/items/${item.id}`}>
                       <button className="px-4 py-2">Ver</button>
                     </Link>
                   </td>
@@ -73,7 +73,7 @@ export default function Home() {
                   <td className="w-2/6">{item.nome}</td>
                   <td className="w-2/6">{item.quantidade}</td>
                   <td className="w-2/6">
-                    <Link to={`/items/${item.id}`}>
+                    <Link to={`/controle-estoque-react/items/${item.id}`}>
                       <button className="px-4 py-2">Ver</button>
                     </Link>
                   </td>

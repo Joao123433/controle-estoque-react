@@ -9,7 +9,7 @@ import UpdateItem from "./pages/Items/UpdateItem";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/controle-estoque-react/",
     element: <RootLayout />,
     children: [
       {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "items",
+        path: "/controle-estoque-react/items",
         element: <RootItems />,
         children: [
            {

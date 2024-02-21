@@ -3,7 +3,7 @@ import ItemInterface from "../interface/ItemInterface"
 import useStock from "./useStock"
 import { toast } from 'react-toastify';
 
-export default function UseUpdateItems() {
+export default function UseNewItems() {
   const [name, setName] = useState("")
   const [quantity, setQuantity] = useState("")
   const [price, setPrice] = useState("")

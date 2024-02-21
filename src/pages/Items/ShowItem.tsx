@@ -22,7 +22,7 @@ export default function ShowItem() {
               <button className="bg-white px-3 py-1 border-0 hover:scale-105 h-full">Atualizar</button>
             </Link>
             <button className="bg-red-500 text-black px-3 py-1 border-0 hover:scale-105" onClick={() => {stock.deleteItem(Number(itemId)); notify()}}>
-              <Link to="/" className="text-black">Excluir</Link>
+              <Link to="/controle-estoque-react/" className="text-black">Excluir</Link>
             </button>
           </div>
         </div>

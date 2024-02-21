@@ -1,74 +1,19 @@
-import { useState, SetStateAction, ChangeEvent } from "react";
-import { useParams } from "react-router-dom";
-import useStock from "../../hooks/useStock";
-import ItemInterface from "../../interface/ItemInterface";
+import { Link, useParams } from "react-router-dom";
 import { CATEGORIES } from "../../entites/Categories";
-import { toast } from 'react-toastify';
+import UseUpdateItems from "../../hooks/UseUpdateItems";
 
 export default function UpdateItem() {
-  const notify = () => toast("Item Atualizado", { theme: "dark" })
-
   const { itemId } = useParams()
-  const stock = useStock()
-  const itemFind = stock.items.find(item => item.id === Number(itemId)) as ItemInterface
-
-  const [name, setName] = useState(itemFind.nome)
-  const [quantity, setQuantity] = useState(itemFind.quantidade)
-  const [price, setPrice] = useState(itemFind.preço)
-  const [category, setCategory] = useState(itemFind.categoria)
-  const [description, setDescription] = useState(itemFind.descrição)
-
-  const settingName = (e: { target: { value: SetStateAction<string> } }) => {
-    setName(e.target.value)
-  }
-
-  const settingQuantity = (e: ChangeEvent<HTMLInputElement>) => {
-    setQuantity(e.target.value)
-  }
-
-  const settingPrice = (e: ChangeEvent<HTMLInputElement>) => {
-    setPrice(e.target.value)
-  }
-
-  const settingCategory = (e: { target: { value: SetStateAction<string> } }) => {
-    setCategory(e.target.value)
-  }
-
-  const settingDescription = (e: { target: { value: SetStateAction<string> } }) => {
-    setDescription(e.target.value)
-  }
-
-  const handleClick = (e: { preventDefault: () => void }) => {
-    e.preventDefault()
-    const item: ItemInterface = {
-      id: itemFind.id,
-      nome: name,
-      quantidade: quantity,
-      preço: price,
-      categoria: category,
-      descrição: description,
-      createdAt: new Date(itemFind.createdAt),
-      updatedAt: new Date()
-    }
-    stock.updatedItem(Number(itemId), item)
-
-    setName("")
-    setQuantity("")
-    setPrice("")
-    setCategory("")
-    setDescription("")
-
-    notify()
-  }
+  const { name, settingName, quantity, settingQuantity, price, settingPrice, category, settingCategory, description, settingDescription, handleClick } = UseUpdateItems(itemId)
 
   return (
-    <section className="flex flex-col items-center gap-5">
+    <section className="flex flex-col items-center gap-5 h-full">
       <form className="w-5/6">
         <section className="flex flex-row gap-4 justify-between">
           <div className="w-1/4 flex flex-col gap-2">
             <label htmlFor="name">Nome:</label>
             <input 
-              type="text" 
+              type="text"
               id="name" 
               value={name} 
               onChange={settingName} 
@@ -98,7 +43,6 @@ export default function UpdateItem() {
           <div className="w-1/4 flex flex-col gap-2">
             <label htmlFor="categorie">Categoria:</label>
             <select 
-              name="" 
               id="categorie" 
               className="px-3 py-1" 
               value={category} 
@@ -110,7 +54,7 @@ export default function UpdateItem() {
           </div>
         </section>
       </form>
-      <div className="flex flex-col w-5/6 h-1/3 gap-2">
+      <div className="flex flex-col w-5/6 h-3/5 gap-2">
         <label htmlFor="description">Descrição:</label>
         <textarea
           id="description"
@@ -120,7 +64,9 @@ export default function UpdateItem() {
         ></textarea>
       </div>
       <div className="w-5/6 flex justify-start">
-        <button className="px-5 py-3" onClick={handleClick}>Atualizar</button>
+        <button onClick={handleClick} className="h-12">
+          <Link to="/controle-estoque-react/items" className="px-5 py-3 text-white">Atualizar</Link>
+        </button>
       </div>
     </section>
   )

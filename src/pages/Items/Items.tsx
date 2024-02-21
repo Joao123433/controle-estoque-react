@@ -35,14 +35,14 @@ export default function Items() {
                 <td className="py-2 w-1/5">{item.quantidade} unid.</td>
                 <td className="py-2 w-1/5">{item.categoria}</td>
                 <td className="py-2 w-1/4 flex gap-5">
-                  <Link to={`/items/${item.id}`} className="text-black">
+                  <Link to={`/controle-estoque-react/items/${item.id}`} className="text-black">
                     <button className="bg-blue-500 px-3 py-1 border-0 hover:scale-105">
                       Ver
                     </button>
                   </Link>
-                  <Link to={`/items/${item.id}/update`} className="text-black">
+                  <Link to={`/controle-estoque-react/items/${item.id}/update`} className="text-black">
                     <button className="bg-white px-3 py-1 border-0 hover:scale-105">
-                      Atulizar
+                      Atualizar
                     </button>
                   </Link>
                   <button className="bg-red-500 text-black px-3 py-1 border-0 hover:scale-105" onClick={() => {stock.deleteItem(item.id); notify()}}>

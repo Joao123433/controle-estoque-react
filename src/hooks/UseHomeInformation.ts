@@ -22,8 +22,8 @@ export default function UseHomeInformation() {
   
     items.forEach(item => {
       uniqueItems.add(item.categoria);
-    });
-  
+    })
+
     return uniqueItems.size;
   }
 
