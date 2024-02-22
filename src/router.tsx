@@ -5,7 +5,8 @@ import Home from "./pages/Home";
 import Items from "./pages/Items/Items";
 import NewItem from "./pages/Items/NewItem";
 import ShowItem from "./pages/Items/ShowItem";
-import UpdateItem from "./pages/Items/UpdateItem";
+import UpdateItem from "./pages/Items/UpdateItem"
+import ItemsBoundary from "./error-boundaries/ItemsBoundary";
 
 const router = createBrowserRouter([
   {
@@ -31,10 +32,12 @@ const router = createBrowserRouter([
           {
             path: ":itemId",
             element: <ShowItem />,
+            errorElement: <ItemsBoundary />
           },
           {
             path: ":itemId/update",
-            element: <UpdateItem />
+            element: <UpdateItem />,
+            errorElement: <ItemsBoundary />
           }
         ] 
       }

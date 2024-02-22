@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { CATEGORIES } from "../../entites/Categories"
 import UseNewItems from "../../hooks/UseNewItems"
 
@@ -63,7 +64,9 @@ export default function NewItem() {
         ></textarea>
       </div>
       <div className="w-5/6 flex justify-start">
-        <button className="px-5 py-3" onClick={handleClick}>Salvar</button>
+        <button onClick={handleClick} className="h-12">
+          <Link to="/controle-estoque-react/items" className="px-5 py-3 text-white">Salvar</Link>
+        </button>
       </div>
     </section>
   )

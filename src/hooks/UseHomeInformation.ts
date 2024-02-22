@@ -1,5 +1,5 @@
 import ItemInterface from "../interface/ItemInterface";
-import useStock from "./useStock";
+import useStock from "./UseStock";
 
 export default function UseHomeInformation() {
   const { items } = useStock()

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import useStock from "../../hooks/useStock"
+import useStock from "../../hooks/UseStock"
 import ItemInterface from "../../interface/ItemInterface"
 import { toast } from 'react-toastify';
 

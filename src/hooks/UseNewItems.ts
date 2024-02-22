@@ -1,6 +1,6 @@
 import { useState, SetStateAction, ChangeEvent } from "react"
 import ItemInterface from "../interface/ItemInterface"
-import useStock from "./useStock"
+import useStock from "./UseStock"
 import { toast } from 'react-toastify';
 
 export default function UseNewItems() {

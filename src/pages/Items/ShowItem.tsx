@@ -1,9 +1,7 @@
 import { Link, useParams } from "react-router-dom"
-import useStock from "../../hooks/useStock"
 import { toast } from 'react-toastify';
 import ItemInterface from "../../interface/ItemInterface";
-
-
+import useStock from "../../hooks/UseStock"
 
 export default function ShowItem() {
   const stock = useStock()
@@ -21,8 +19,8 @@ export default function ShowItem() {
             <Link to="update" className="text-black">
               <button className="bg-white px-3 py-1 border-0 hover:scale-105 h-full">Atualizar</button>
             </Link>
-            <button className="bg-red-500 text-black px-3 py-1 border-0 hover:scale-105" onClick={() => {stock.deleteItem(Number(itemId)); notify()}}>
-              <Link to="/controle-estoque-react/" className="text-black">Excluir</Link>
+            <button className="bg-red-500 text-black border-0 hover:scale-105" onClick={() => {stock.deleteItem(Number(itemId)); notify()}}>
+              <Link to="/controle-estoque-react/" className="text-black px-3 py-1">Excluir</Link>
             </button>
           </div>
         </div>
